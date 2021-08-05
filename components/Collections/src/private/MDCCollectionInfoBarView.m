@@ -133,6 +133,7 @@ static inline UIColor *CollectionInfoBarRedColor(void) {
 }
 
 - (void)setKind:(NSString *)kind {
+  if (_kind) return;
   _kind = kind;
   _backgroundTransformY = CGRectGetHeight(self.bounds);
   if ([kind isEqualToString:MDCCollectionInfoBarKindHeader]) {
